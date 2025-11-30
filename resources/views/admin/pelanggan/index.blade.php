@@ -97,7 +97,7 @@
                                         <td>{{ $item->phone }}</td>
                                         <td>
     <!-- tombol detail -->
-    <a href="{{ route('profile.show', $item) }}" 
+    <a href="{{ route('pelanggan.show', $item) }}" 
                                         class="btn btn-outline-primary btn-sm">
                                         <i class="fas fa-eye"></i> Detail
     <!-- Tombol Edit -->
