@@ -136,7 +136,7 @@
                                             <div class="col ps-0 ms-2">
                                                 <div class="d-flex justify-content-between align-items-center">
                                                     <div>
-                                                        <h4 class="h6 mb-0 text-small">Bonnie Green</h4>
+                                                        <h4 class="h6 mb-0 text-small">bono</h4>
                                                     </div>
                                                     <div class="text-end">
                                                         <small>2 hrs ago</small>
@@ -161,16 +161,18 @@
                             </div>
                         </li>
                         <li class="nav-item dropdown ms-lg-3">
+                            @if(Auth::check())
                             <a class="nav-link dropdown-toggle pt-1 px-0" href="#" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 <div class="media d-flex align-items-center">
                                     <img class="avatar rounded-circle" alt="Image placeholder"
                                         src="{{ asset('assets-admin') }}/img/team/profile-picture-3.jpg">
                                     <div class="media-body ms-2 text-dark align-items-center d-none d-lg-block">
-                                        <span class="mb-0 font-small fw-bold text-gray-900">Bonnie Green</span>
+                                        <span class="mb-0 font-small fw-bold text-gray-900">{{Auth::user()->email}}</span>
                                     </div>
                                 </div>
                             </a>
+                            @endif
                             <div class="dropdown-menu dashboard-dropdown dropdown-menu-end mt-2 py-1">
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <svg class="dropdown-icon text-gray-400 me-2" fill="currentColor"
@@ -209,7 +211,7 @@
                                     Support
                                 </a>
                                 <div role="separator" class="dropdown-divider my-1"></div>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                <a class="dropdown-item d-flex align-items-center" href="{{ route('auth.logout') }}">
                                     <svg class="dropdown-icon text-danger me-2" fill="none" stroke="currentColor"
                                         viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

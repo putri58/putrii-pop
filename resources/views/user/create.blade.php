@@ -132,7 +132,7 @@
                                     </div>
                                 </div>
 
-                                                                <!-- Email -->
+                                <!-- Email -->
                                 <div class="col-lg-4 col-sm-6">
                                     <div class="mb-3">
                                         <label for="email">Email</label>
@@ -141,7 +141,7 @@
                                     </div>
                                 </div>
 
-                                                                                                <!-- Email -->
+                                <!-- Email -->
                                 <div class="col-lg-4 col-sm-6">
                                     <div class="mb-3">
                                         <label for="email">Password</label>
@@ -150,21 +150,34 @@
                                     </div>
                                 </div>
 
-                                                                <div class="col-lg-4 col-sm-6">
+                                <div class="col-lg-4 col-sm-6">
                                     <div class="mb-3">
                                         <label for="email">Password Confirmation</label>
-                                        <input type="password" class="form-control" id="password-confirmation" name="password_confirmation"
-                                            placeholder="Enter password confirmation" }}" required>
+                                        <input type="password" class="form-control" id="password-confirmation"
+                                            name="password_confirmation" placeholder="Enter password confirmation" }}"
+                                            required>
                                     </div>
                                 </div>
+                                <div class="mb-3">
+                                    <label for="role">Role</label>
+                                    <select class="form-select" name="role" id="role" required>
+                                        <option selected disabled value="">Pilih role...</option>
+                                        <option value="SuperAdmin">Super Admin</option>
+                                        <option value="Pelanggan">Pelanggan</option>
+                                        <option value="Mitra">Mitra</option>
+                                    </select>
+                                    <small class="form-text text-muted">Sesuai dengan tipe ENUM(Super Admin, Pelanggan,
+                                        Mitra)</small>
+                                </div>
 
-                            <!-- Buttons -->
-                            <div class="d-flex justify-content-end">
-                                <button type="submit" class="btn btn-dark me-2">Simpan</button>
-                                <button type="reset" class="btn btn-outline-warning">Batal</button>
+
+                                <!-- Buttons -->
+                                <div class="d-flex justify-content-end">
+                                    <button type="submit" class="btn btn-dark me-2">Simpan</button>
+                                    <button type="reset" class="btn btn-outline-warning">Batal</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
                 </form>
 
             </div>

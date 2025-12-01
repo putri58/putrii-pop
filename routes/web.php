@@ -53,20 +53,25 @@ Route::get('/pegawai',[PegawaiController::class,'index']);
 Route::post('question/store', [QuestionController::class, 'store'])
 		->name('question.store');
 
-Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('dashboard', [DashboardController::class, 'index'])
+->name('dashboard')
+->Middleware('checkislogin') ;
 
 Route::get('/about', function(){
     return view('halaman-about');
 });
 
 Route::resource('pelanggan', PelangganController::class);
-Route::resource('user', UserController::class);
+Route::group(['middleware' => ['checkrole:SuperAdmin']], function() {
+    Route::resource('user', UserController::class);
+});
 Route::resource('profile', ProfileController::class);
 
 
 Route::get('/multipleuploads', 'MultipleuploadsController@index')->name('uploads');
 Route::post('/save','MultipleuploadsController@store')->name('uploads.store');
 
-Route::get('/auth', [AuthController::class, 'index'])->name('login');
+Route::get('/auth', [AuthController::class, 'index'])->name('auth');
+Route::get('auth/logout', [AuthController::class, 'logout'])->name('auth.logout');
 Route::post('/auth/login', [AuthController::class, 'login'])->name('auth.login');
 
