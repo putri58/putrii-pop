@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PegawaiController;
@@ -65,4 +66,7 @@ Route::resource('profile', ProfileController::class);
 
 Route::get('/multipleuploads', 'MultipleuploadsController@index')->name('uploads');
 Route::post('/save','MultipleuploadsController@store')->name('uploads.store');
+
+Route::get('/auth', [AuthController::class, 'index'])->name('login');
+Route::post('/auth/login', [AuthController::class, 'login'])->name('auth.login');
 
